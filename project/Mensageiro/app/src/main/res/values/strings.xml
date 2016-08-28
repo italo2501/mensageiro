@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Mensageiro</string>
+    <string name="button_tweet">Enviar</string>
+    <string name="hint_status">O que você está pensando?</string>
 </resources>
