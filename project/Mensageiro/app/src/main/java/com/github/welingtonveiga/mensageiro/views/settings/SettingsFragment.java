@@ -1,4 +1,4 @@
-package com.github.welingtonveiga.mensageiro.settings;
+package com.github.welingtonveiga.mensageiro.views.settings;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;

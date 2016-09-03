@@ -1,4 +1,4 @@
-package com.github.welingtonveiga.mensageiro.main;
+package com.github.welingtonveiga.mensageiro.views.main;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,8 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.github.welingtonveiga.mensageiro.R;
-import com.github.welingtonveiga.mensageiro.settings.SettingsActivity;
-import com.github.welingtonveiga.mensageiro.status.StatusActivity;
+import com.github.welingtonveiga.mensageiro.services.RefreshService;
+import com.github.welingtonveiga.mensageiro.views.settings.SettingsActivity;
+import com.github.welingtonveiga.mensageiro.views.status.StatusActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,12 +28,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+
             case R.id.action_settings:
                 startActivity(new Intent(this, SettingsActivity.class));
                 return true;
+
             case R.id.action_tweet:
                 startActivity(new Intent(this, StatusActivity.class));
                 return true;
+
+            case R.id.action_refresh:
+                startService(new Intent(this, RefreshService.class));
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -1,4 +1,4 @@
-package com.github.welingtonveiga.mensageiro.status;
+package com.github.welingtonveiga.mensageiro.views.status;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

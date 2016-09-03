@@ -9,4 +9,5 @@
     <string name="password"> Senha</string>
     <string name="password_summary">Senha</string>
     <string name="auth_config">Autenticação</string>
+    <string name="refresh">Atualizar</string>
 </resources>
