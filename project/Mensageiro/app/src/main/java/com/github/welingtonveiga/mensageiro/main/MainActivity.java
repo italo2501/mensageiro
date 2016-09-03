@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.github.welingtonveiga.mensageiro.R;
+import com.github.welingtonveiga.mensageiro.settings.SettingsActivity;
 import com.github.welingtonveiga.mensageiro.status.StatusActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                //startActivity(new Intent(this, SettingsActivity.class));
+                startActivity(new Intent(this, SettingsActivity.class));
                 return true;
             case R.id.action_tweet:
                 startActivity(new Intent(this, StatusActivity.class));
