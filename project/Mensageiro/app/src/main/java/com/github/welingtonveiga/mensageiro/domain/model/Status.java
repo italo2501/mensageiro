@@ -1,5 +1,7 @@
 package com.github.welingtonveiga.mensageiro.domain.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Date;
 
 public class Status {
@@ -7,6 +9,8 @@ public class Status {
     private Long id;
     private String author;
     private String message;
+
+    @SerializedName("created_at")
     private Date createdAt;
 
     public Status() {
