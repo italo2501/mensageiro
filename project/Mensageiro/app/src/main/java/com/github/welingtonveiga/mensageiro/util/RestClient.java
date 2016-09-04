@@ -1,5 +1,6 @@
 package com.github.welingtonveiga.mensageiro.util;
 
+import com.github.welingtonveiga.mensageiro.domain.model.Status;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -27,6 +28,14 @@ public class RestClient {
         String json = http.get(uri);
 
         return Arrays.asList(gson.fromJson(json, type));
+    }
+
+    public <T> T post(String uri, T object, Class<? extends T> type) {
+        requireNonNull(object);
+
+        String json = http.post(uri, gson.toJson(object));
+
+        return gson.fromJson(json, type);
     }
 
 }

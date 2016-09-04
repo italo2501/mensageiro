@@ -14,6 +14,11 @@ public class Status {
     private Date createdAt;
 
     public Status() {
+        this(null, null, null, null);
+    }
+
+    public Status(String author, String status, Date date) {
+        this(null, author, status, date);
     }
 
     public Status(Long id, String author, String message, Date createdAt) {
@@ -22,6 +27,7 @@ public class Status {
         this.message = message;
         this.createdAt = createdAt;
     }
+
 
     public Long getId() {
         return id;
