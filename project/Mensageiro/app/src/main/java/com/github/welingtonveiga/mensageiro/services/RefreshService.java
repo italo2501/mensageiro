@@ -5,8 +5,12 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
 
+import com.github.welingtonveiga.mensageiro.domain.services.StatusService;
+
 public class RefreshService extends IntentService {
     private static final String TAG = RefreshService.class.getName();
+
+    private final StatusService statusService = new StatusService();
 
     public RefreshService() {
         super(TAG);
@@ -20,7 +24,9 @@ public class RefreshService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        Log.d(TAG, "onStarted");
+
+        Log.i(TAG, statusService.getLastStatuses().toString());
+
     }
 
     @Override
