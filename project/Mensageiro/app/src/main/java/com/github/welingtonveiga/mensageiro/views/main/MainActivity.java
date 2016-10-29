@@ -39,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.action_refresh:
                 startService(new Intent(this, RefreshService.class));
+                // Refresh
+                startActivity(new Intent(this, MainActivity.class));
+                finish();
+
                 return true;
 
             default:

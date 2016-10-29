@@ -1,7 +1,11 @@
 package com.github.welingtonveiga.mensageiro.util;
 
-/**
- * Created by welingtonveiga on 03/09/16.
- */
+import android.content.Context;
+import android.database.Cursor;
+import android.view.View;
+
 public interface ListItemBinder {
+
+    public void bind(View view, Context context, Cursor cursor);
+
 }

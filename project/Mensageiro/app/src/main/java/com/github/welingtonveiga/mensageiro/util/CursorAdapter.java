@@ -5,22 +5,19 @@ import android.content.Context;
 import android.database.Cursor;
 import android.view.View;
 import android.widget.ResourceCursorAdapter;
-import android.widget.TextView;
-
-import com.github.welingtonveiga.mensageiro.R;
 
 public class CursorAdapter extends ResourceCursorAdapter {
 
-    private int[] from;
-    private int[] to;
+    private final ListItemBinder binder;
 
 
-    public CursorAdapter(Context context, int layout, Cursor c, int flags,) {
+    public CursorAdapter(Context context, int layout, Cursor c, int flags, ListItemBinder binder) {
         super(context, layout, c, flags);
+        this.binder = binder;
     }
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-
+        binder.bind(view, context, cursor);
     }
 }

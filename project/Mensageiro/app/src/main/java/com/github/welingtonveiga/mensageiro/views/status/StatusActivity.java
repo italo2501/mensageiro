@@ -1,5 +1,6 @@
 package com.github.welingtonveiga.mensageiro.views.status;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import com.github.welingtonveiga.mensageiro.R;
 import com.github.welingtonveiga.mensageiro.domain.model.Status;
 import com.github.welingtonveiga.mensageiro.util.RestClient;
+import com.github.welingtonveiga.mensageiro.views.main.MainActivity;
 
 import java.util.Date;
 
@@ -47,6 +49,9 @@ public class StatusActivity extends AppCompatActivity {
                 final String username = prefs.getString("username", "Jhon Doe");
 
                 new PostTask().execute(new Status(username, status, new Date()));
+
+
+
             }
         });
 
@@ -77,6 +82,8 @@ public class StatusActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             Toast.makeText(StatusActivity.this, result, Toast.LENGTH_LONG).show();
+            startActivity(new Intent(StatusActivity.this, MainActivity.class));
+            finish();
         }
     }
 
