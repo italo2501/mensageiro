@@ -1,4 +1,4 @@
-package com.github.welingtonveiga.mensageiro.views.settings;
+package com.github.welingtonveiga.mensageiro.settings;
 
 import android.app.Activity;
 import android.os.Bundle;
