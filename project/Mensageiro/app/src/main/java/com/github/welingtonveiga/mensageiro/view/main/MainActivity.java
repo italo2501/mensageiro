@@ -1,4 +1,4 @@
-package com.github.welingtonveiga.mensageiro.main;
+package com.github.welingtonveiga.mensageiro.view.main;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,8 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.github.welingtonveiga.mensageiro.R;
-import com.github.welingtonveiga.mensageiro.settings.SettingsActivity;
-import com.github.welingtonveiga.mensageiro.status.StatusActivity;
+import com.github.welingtonveiga.mensageiro.view.settings.SettingsActivity;
+import com.github.welingtonveiga.mensageiro.view.status.StatusActivity;
 
 public class MainActivity extends AppCompatActivity {
 

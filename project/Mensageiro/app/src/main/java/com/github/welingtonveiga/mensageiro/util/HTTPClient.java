@@ -1,0 +1,41 @@
+package com.github.welingtonveiga.mensageiro.util;
+
+import android.support.annotation.NonNull;
+
+import java.io.IOException;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+public class HTTPClient {
+
+    private final OkHttpClient client;
+
+    public HTTPClient() {
+        client = new OkHttpClient.Builder()
+                .addInterceptor(new LoggingInterceptor())
+                .build();
+    }
+
+    @NonNull
+    public String get(String uri) {
+        Response response = null;
+        String body;
+        try {
+            Request request = new Request.Builder()
+                    .url(uri)
+                    .header("Content-Type", "application/json")
+                    .build();
+            response = client.newCall(request).execute();
+            body = response.body().string();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if (response != null) {
+                response.body().close();
+            }
+        }
+        return body;
+    }
+}

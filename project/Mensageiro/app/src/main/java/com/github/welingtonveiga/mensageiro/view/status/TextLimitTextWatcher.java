@@ -1,4 +1,4 @@
-package com.github.welingtonveiga.mensageiro.status;
+package com.github.welingtonveiga.mensageiro.view.status;
 
 import android.graphics.Color;
 import android.text.Editable;

@@ -7,6 +7,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.github.welingtonveiga.mensageiro.main.MainActivity">
+    tools:context=".view.main.MainActivity">
+
+    <!-- Timeline Fragment 1 -->
+    <fragment
+        android:id="@+id/fragment_timeline"
+        android:name="com.github.welingtonveiga.mensageiro.view.timeline.TimelineFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
