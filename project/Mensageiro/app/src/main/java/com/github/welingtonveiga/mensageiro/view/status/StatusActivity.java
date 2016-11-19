@@ -80,10 +80,12 @@ public class StatusActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-            // Exibir mensagem sobre a tela com o resultado da operação.
+            // 1 - Exibir mensagem sobre a tela com o resultado da operação.
             Toast.makeText(StatusActivity.this, result, Toast.LENGTH_LONG).show();
 
+            // 2 - Levar o usuário para a tela inicial
             startActivity(new Intent(StatusActivity.this, MainActivity.class));
+            // 3 - Finalizar essa activity para liberar recursos
             StatusActivity.this.finish();
         }
     }
