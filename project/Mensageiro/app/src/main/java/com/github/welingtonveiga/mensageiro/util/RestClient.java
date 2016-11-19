@@ -30,4 +30,13 @@ public class RestClient {
 
         return Arrays.asList(gson.fromJson(json, type));
     }
+
+    public <T> T post(String uri, T object, Class<? extends T> type) {
+        requireNonNull(object);
+
+        String json = http.post(uri, gson.toJson(object));
+
+        return gson.fromJson(json, type);
+    }
+
 }

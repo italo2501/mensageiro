@@ -9,4 +9,6 @@
     <string name="password"> Senha</string>
     <string name="password_summary">Senha</string>
     <string name="auth_config">Autenticação</string>
+    <string name="publish_message_succes">Published!</string>
+    <string name="publish_message_failed">Publication failed...</string>
 </resources>

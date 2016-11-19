@@ -12,14 +12,19 @@ public class Message {
     @SerializedName("created_at")
     private Date createdAt;
 
-    public Message() {
-    }
-
     public Message(Long id, String author, String message, Date createdAt) {
         this.id = id;
         this.author = author;
         this.message = message;
         this.createdAt = createdAt;
+    }
+
+    public Message(String author, String message) {
+        this(null, author, message, new Date());
+    }
+
+    public Message() {
+        this(null, null, null, null);
     }
 
     public Long getId() {
