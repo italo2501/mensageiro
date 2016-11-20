@@ -15,17 +15,13 @@ import java.util.List;
 
 public class TimelineFragment  extends ListFragment {
 
-    private static final String TAG = TimelineFragment.class.getName();
-
     private final MessageService messageService = new MessageService();
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         // 1 - Exibe diálogo de carregamento.
         final ProgressDialog loader =  ProgressDialog.show(getActivity(), "Por favor Aguarde ...", "Carregando mensagens.");
-
         new AsyncTask<Void, Void, List<Message>>() {
             @Override
             protected List<Message> doInBackground(Void... voids) {
@@ -44,8 +40,5 @@ public class TimelineFragment  extends ListFragment {
                 loader.dismiss();
             }
         }.execute();
-
-
-
     }
 }

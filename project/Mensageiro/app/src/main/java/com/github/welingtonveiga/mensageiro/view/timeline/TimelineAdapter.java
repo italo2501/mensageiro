@@ -15,8 +15,6 @@ import com.github.welingtonveiga.mensageiro.util.LocaleProvider;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Locale;
-import java.util.zip.Inflater;
 
 public class TimelineAdapter extends ArrayAdapter<Message> {
 
@@ -29,7 +27,6 @@ public class TimelineAdapter extends ArrayAdapter<Message> {
 
     public TimelineAdapter(Context context, int resource, List<Message> objects) {
         super(context, resource, objects);
-
         this.context = context;
         this.statuses = objects;
         formatter = new SimpleDateFormat("HH:mm:ss dd/MM/yyy", LocaleProvider.get(context));
@@ -37,9 +34,6 @@ public class TimelineAdapter extends ArrayAdapter<Message> {
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
-
-
-
         if (view == null) {
             LayoutInflater inflater = ((Activity)context).getLayoutInflater();
             view = inflater.inflate(R.layout.fragment_timeline_item,parent, false);
