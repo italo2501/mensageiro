@@ -32,7 +32,15 @@ public class StatusActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
 
+        final Message message;
+        if (getIntent().getExtras().containsKey("message")) {
+            message = (Message) getIntent().getExtras().get("message");
+        } else {
+            message = new Message();
+        }
+
         editStatus = (EditText) findViewById(R.id.editStatus);
+        editStatus.setText(message.getMessage());
         buttonTweet = (Button) findViewById(R.id.buttonTweet);
         textCount = (TextView) findViewById(R.id.textCount);
 
@@ -45,8 +53,9 @@ public class StatusActivity extends AppCompatActivity {
                 final String username = prefs.getString("username", "Jhon Doe");
 
                 String status = editStatus.getText().toString();
-
-                new PostTask().execute(new Message(username, status));
+                message.setAuthor(username);
+                message.setMessage(status);
+                new PostTask().execute(message);
             }
         });
 
